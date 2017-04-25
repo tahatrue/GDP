@@ -12,9 +12,9 @@ MACHINE ?= "m3ulcb"
 SOC_FAMILY ?= "r8a7796"
 
 # Linaro GCC
-GCCVERSION = "linaro-5.2"
+GCCVERSION = "linaro-5.3"
 
-PACKAGE_CLASSES = "package_ipk"
+PACKAGE_CLASSES = "package_rpm"
 
 # add the static lib to SDK toolchain
 SDKIMAGE_FEATURES_append = " staticdev-pkgs"
@@ -35,6 +35,16 @@ PREFERRED_PROVIDER_virtual/mesa = ""
 PREFERRED_PROVIDER_libgbm = "libgbm"
 PREFERRED_PROVIDER_libgbm-dev = "libgbm"
 BBMASK .= "|mesa-gl"
+
+# Build the Gstreamer version the Yocto BSP accelerates
+PREFERRED_VERSION_gstreamer1.0 = "1.6.3"
+PREFERRED_VERSION_gstreamer1.0-plugins-bad = "1.6.3"
+PREFERRED_VERSION_gstreamer1.0-plugins-base = "1.6.3"
+PREFERRED_VERSION_gstreamer1.0-plugins-good = "1.6.3"
+PREFERRED_VERSION_gstreamer1.0-plugins-ugly = "1.6.3"
+PREFERRED_VERSION_gstreamer1.0-libav = "1.6.3"
+PREFERRED_VERSION_gstreamer1.0-rtsp-server = "1.6.3"
+PREFERRED_VERSION_gstreamer1.0-omx = "1.2.0"
 
 # Enable Multimedia features
 MACHINE_FEATURES_append = " multimedia"
